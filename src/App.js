@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  {Route , BrowserRouter as Router} from 'react-router-dom';
+import Login from  '../src/views/login';
+import Admin from '../src/views/adminDashboard';
+import User from '../src/views/userDashboard';
+import Home from '../src/views/home';
+import Event from "./views/Event";
+
+import history from "./history";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router history={history}>
+          <Route exact path={'/'} component={Home}/>
+         <Route path={'/login'} component={Login}/>
+         <Route path={'/admin'} component={Admin}/>
+         <Route path={'/dashboard'} component={User}/>
+         <Route path={'/event/:id'} component={Event}/>
+      </Router>
     </div>
   );
 }
