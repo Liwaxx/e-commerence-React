@@ -15,13 +15,7 @@ class AdminNavigation extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                         <Nav>
                             <Nav.Item>
-                                <Nav.Link href="/catalog">User</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="/login">Transaksi</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="/register">Barang</Nav.Link>
+                                <Nav.Link disabled>Hallo, Admin</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link href="/register">Log out</Nav.Link>

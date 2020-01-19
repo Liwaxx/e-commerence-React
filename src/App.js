@@ -21,7 +21,7 @@ function App() {
                 <Route path={'/cart'} component={Cart}/>
                 <Route path={'/catalog'} component={Catalog}/> 
                 <Route path={'/checkout'} component={Checkout}/>
-                <Route path={'/admin'} component={Admin}/>
+                <Route path={'/admin-dashboard'} component={Admin}/>
             </Router>
         </div>
     );

@@ -19,8 +19,14 @@ class Login extends Component {
         e.preventDefault();
         axios.post('http://localhost:8000/api/login', this.state)
             .then(res => {
-                console.log(res)
-                this.props.history.push('/');
+                if(res.data.data.role === 'user'){
+                    localStorage.setItem('credential', res.data.data.role);
+                    localStorage.setItem('user_id', res.data.data.id_user);
+                    this.props.history.push('/');
+                }else{
+                    this.props.history.push('/admin-dashboard');
+                    localStorage.setItem('credential', res.data.data.role);
+                }
             })
             .catch(error => {
                 if (error.request) {
